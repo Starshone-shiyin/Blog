@@ -10,6 +10,7 @@ const tags = await getAllTags();
 
 <BaseLayout title="Blog | 个人博客" description="一个用于记录思考、技术和生活片段的个人博客。">
   <section class="hero">
+    <img class="hero-avatar" src={withBase('/images/avatar.jpg')} alt="" width="112" height="112" />
     <div class="hero-copy">
       <p class="eyebrow">Personal Blog</p>
       <h1>记录想法，也整理自己。</h1>
@@ -19,13 +20,6 @@ const tags = await getAllTags();
       <div class="hero-actions">
         <a class="button primary" href={withBase('/posts/')}>阅读文章</a>
         <a class="button" href={withBase('/about/')}>关于我</a>
-      </div>
-    </div>
-    <div class="hero-visual" style={`--texture: url("${withBase('/images/paper-texture.svg')}")`} aria-hidden="true">
-      <div class="note-stack">
-        <span>draft.md</span>
-        <strong>Ideas worth revisiting</strong>
-        <em>写下来，慢慢长成一片自己的地图。</em>
       </div>
     </div>
   </section>
