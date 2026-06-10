@@ -1,0 +1,8 @@
+---
+import { withBase } from '@/lib/blog';
+---
+
+<footer class="site-footer">
+  <p>© {new Date().getFullYear()} Blog. Built with Astro.</p>
+  <a href={withBase('/rss.xml')}>RSS</a>
+</footer>

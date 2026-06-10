@@ -1,0 +1,51 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostList from '@/components/PostList.astro';
+import { getAllTags, getPublishedPosts, tagPath, withBase } from '@/lib/blog';
+
+const posts = await getPublishedPosts();
+const recentPosts = posts.slice(0, 3);
+const tags = await getAllTags();
+---
+
+<BaseLayout title="Blog | 个人博客" description="一个用于记录思考、技术和生活片段的个人博客。">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Personal Blog</p>
+      <h1>记录想法，也整理自己。</h1>
+      <p>
+        这里会放技术笔记、读书摘录、生活观察，以及那些暂时还没有归类但值得留下的东西。
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href={withBase('/posts/')}>阅读文章</a>
+        <a class="button" href={withBase('/about/')}>关于我</a>
+      </div>
+    </div>
+    <div class="hero-visual" style={`--texture: url("${withBase('/images/paper-texture.svg')}")`} aria-hidden="true">
+      <div class="note-stack">
+        <span>draft.md</span>
+        <strong>Ideas worth revisiting</strong>
+        <em>写下来，慢慢长成一片自己的地图。</em>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="section-heading">
+      <p class="eyebrow">Latest</p>
+      <h2>最近文章</h2>
+      <a href={withBase('/posts/')}>查看全部</a>
+    </div>
+    <PostList posts={recentPosts} />
+  </section>
+
+  <section class="content-band two-column">
+    <div>
+      <p class="eyebrow">Topics</p>
+      <h2>标签</h2>
+    </div>
+    <div class="tag-cloud">
+      {tags.map((tag) => <a href={withBase(tagPath(tag.name))}>{tag.name}<span>{tag.count}</span></a>)}
+    </div>
+  </section>
+</BaseLayout>
