@@ -23,7 +23,7 @@ const { posts } = Astro.props;
             <p>{post.data.description}</p>
             <div class="tag-row compact" aria-label="标签">
               {post.data.tags.map((tag) => (
-                <span>{tag}</span>
+                <span>#{tag}</span>
               ))}
             </div>
           </div>

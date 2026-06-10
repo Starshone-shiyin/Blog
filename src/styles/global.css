@@ -74,16 +74,16 @@ main,
 }
 
 .site-nav a {
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 6px 0;
   color: var(--muted);
   font-size: 0.95rem;
+  border-bottom: 1px solid transparent;
 }
 
 .site-nav a:hover,
 .site-nav a.active {
-  color: var(--ink);
-  background: rgba(18, 106, 102, 0.1);
+  color: var(--accent-strong);
+  border-bottom-color: rgba(18, 106, 102, 0.45);
 }
 
 .hero {
@@ -145,21 +145,20 @@ main,
 
 .button {
   display: inline-flex;
-  min-height: 44px;
+  min-height: auto;
   align-items: center;
   justify-content: center;
-  padding: 10px 16px;
-  border: 1px solid rgba(18, 106, 102, 0.28);
-  border-radius: 8px;
+  padding: 0 0 3px;
+  border: 0;
+  border-bottom: 1px solid rgba(18, 106, 102, 0.42);
   background: transparent;
-  color: var(--ink);
+  color: var(--accent-strong);
   font-weight: 700;
 }
 
 .button.primary {
-  border-color: var(--accent);
-  background: var(--accent);
-  color: white;
+  border-color: rgba(217, 111, 50, 0.58);
+  color: var(--ink);
 }
 
 .content-band,
@@ -242,13 +241,12 @@ main,
 
 .tag-row span,
 .tag-row a {
-  padding: 4px 9px;
-  border: 1px solid rgba(18, 106, 102, 0.18);
-  border-radius: 8px;
+  padding: 0;
+  border: 0;
   color: var(--accent-strong);
-  background: rgba(18, 106, 102, 0.08);
+  background: transparent;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 650;
 }
 
 .two-column {
@@ -260,31 +258,38 @@ main,
 
 .tag-cloud {
   display: flex;
-  gap: 10px;
+  gap: 12px 18px;
   flex-wrap: wrap;
 }
 
 .tag-cloud a {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  min-height: 42px;
-  padding: 9px 12px;
-  border: 1px solid rgba(18, 106, 102, 0.18);
-  border-radius: 8px;
+  gap: 6px;
+  min-height: auto;
+  padding: 0 0 3px;
+  border: 0;
+  border-bottom: 1px solid rgba(18, 106, 102, 0.2);
   background: transparent;
-  font-weight: 800;
+  color: var(--accent-strong);
+  font-weight: 700;
 }
 
 .tag-cloud span {
-  display: grid;
-  min-width: 24px;
-  height: 24px;
-  place-items: center;
-  border-radius: 999px;
-  color: white;
-  background: var(--accent);
+  display: inline;
+  min-width: auto;
+  height: auto;
+  color: var(--muted);
+  background: transparent;
   font-size: 0.78rem;
+}
+
+.tag-cloud span::before {
+  content: "(";
+}
+
+.tag-cloud span::after {
+  content: ")";
 }
 
 .tag-cloud.large a {
@@ -409,7 +414,7 @@ main,
   }
 
   .site-nav a {
-    padding-inline: 10px;
+    padding-inline: 0;
   }
 
   .hero-copy h1 {

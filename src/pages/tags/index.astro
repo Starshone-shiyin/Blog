@@ -12,6 +12,6 @@ const tags = await getAllTags();
     <p>用几个关键词，给不断变化的兴趣留下一点线索。</p>
   </section>
   <div class="tag-cloud large">
-    {tags.map((tag) => <a href={withBase(tagPath(tag.name))}>{tag.name}<span>{tag.count}</span></a>)}
+    {tags.map((tag) => <a href={withBase(tagPath(tag.name))}>#{tag.name}<span>{tag.count}</span></a>)}
   </div>
 </BaseLayout>
