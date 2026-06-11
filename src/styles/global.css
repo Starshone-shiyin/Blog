@@ -69,7 +69,7 @@ main,
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
@@ -77,24 +77,22 @@ main,
   padding: 6px 0;
   color: var(--muted);
   font-size: 0.95rem;
-  border-bottom: 1px solid transparent;
 }
 
 .site-nav a:hover,
 .site-nav a.active {
   color: var(--accent-strong);
-  border-bottom-color: rgba(18, 106, 102, 0.45);
 }
 
 .hero {
-  min-height: calc(100vh - 220px);
+  min-height: calc(100vh - 48px);
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
   gap: 24px;
   max-width: 860px;
-  padding: 68px 0 92px;
+  padding: 88px 0 112px;
 }
 
 .hero-copy h1,
@@ -148,17 +146,22 @@ main,
   min-height: auto;
   align-items: center;
   justify-content: center;
-  padding: 0 0 3px;
+  padding: 0;
   border: 0;
-  border-bottom: 1px solid rgba(18, 106, 102, 0.42);
   background: transparent;
   color: var(--accent-strong);
   font-weight: 700;
 }
 
 .button.primary {
-  border-color: rgba(217, 111, 50, 0.58);
   color: var(--ink);
+}
+
+.button::after,
+.section-heading a::after {
+  content: " ->";
+  color: var(--muted);
+  font-weight: 500;
 }
 
 .content-band,
@@ -185,16 +188,15 @@ main,
 
 .section-heading a {
   color: var(--accent-strong);
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .post-list {
   display: block;
-  border-top: 1px solid var(--line);
 }
 
 .post-card {
-  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
 }
 
 .post-card:hover {
@@ -267,12 +269,11 @@ main,
   align-items: center;
   gap: 6px;
   min-height: auto;
-  padding: 0 0 3px;
+  padding: 0;
   border: 0;
-  border-bottom: 1px solid rgba(18, 106, 102, 0.2);
   background: transparent;
   color: var(--accent-strong);
-  font-weight: 700;
+  font-weight: 650;
 }
 
 .tag-cloud span {
@@ -392,7 +393,7 @@ main,
   }
 
   .hero {
-    min-height: auto;
+    min-height: calc(100svh - 112px);
     padding-top: 48px;
   }
 
